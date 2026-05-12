@@ -1,0 +1,73 @@
+name: Sync PointsOrCash valuations
+
+on:
+  schedule:
+    - cron: "23 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download latest valuations
+        run: |
+          curl --fail --silent --show-error \
+            "https://flytrippers.com/wp-content/uploads/flytrippers-card-data/pointsorcash-valuations.json" \
+            --output /tmp/points-valuations.raw.json
+
+      - name: Validate and normalize JSON
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          source = Path("/tmp/points-valuations.raw.json")
+          destination = Path("assets/data/points-valuations.json")
+
+          data = json.loads(source.read_text())
+          required_top_level = {"schema_version", "currency", "unit", "updated_at", "programs"}
+          missing = sorted(required_top_level - data.keys())
+          if missing:
+              raise SystemExit(f"Missing top-level fields: {', '.join(missing)}")
+
+          if data["currency"] != "CAD":
+              raise SystemExit("Expected CAD valuations")
+
+          if data["unit"] != "cents_per_point":
+              raise SystemExit("Expected cents_per_point unit")
+
+          programs = data["programs"]
+          if not isinstance(programs, list) or not programs:
+              raise SystemExit("Expected at least one program")
+
+          for program in programs:
+              for field in ("id", "category", "name", "display_name", "value_cents", "order"):
+                  if field not in program:
+                      raise SystemExit(f"Program is missing {field}: {program}")
+              if not isinstance(program["value_cents"], (int, float)) or program["value_cents"] <= 0:
+                  raise SystemExit(f"Invalid value_cents for {program['id']}")
+
+          programs.sort(key=lambda item: (item.get("order", 9999), item.get("display_name", "")))
+          data["programs"] = programs
+
+          destination.write_text(json.dumps(data, indent=2, ensure_ascii=True) + "\n")
+          PY
+
+      - name: Commit valuation changes
+        run: |
+          if git diff --quiet -- assets/data/points-valuations.json; then
+            echo "No valuation changes detected."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/points-valuations.json
+          git commit -m "Update PointsOrCash valuations"
+          git push

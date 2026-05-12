@@ -1,0 +1,10 @@
+title: Points or Cash
+description: A travel rewards calculator for deciding whether to use points or cash.
+url: "https://pointsorcash.com"
+baseurl: ""
+
+plugins: []
+
+exclude:
+  - README.md
+  - notes.md
