@@ -18,6 +18,7 @@ jobs:
       - name: Download latest valuations
         run: |
           curl --fail --silent --show-error \
+            -A "PointsOrCashValuationSync/1.0 (+https://github.com/Flytrippers/pointsorcash)" \
             "https://flytrippers.com/wp-content/uploads/flytrippers-card-data/pointsorcash-valuations.json" \
             --output /tmp/points-valuations.raw.json
 
