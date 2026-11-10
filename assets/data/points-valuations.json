@@ -3,7 +3,7 @@
   "source": "flytrippers-card-data-static-json",
   "currency": "CAD",
   "unit": "cents_per_point",
-  "updated_at": "2026-11-05 22:42:56",
+  "updated_at": "2026-11-10 16:11:56",
   "programs": [
     {
       "id": "aeroplan",
