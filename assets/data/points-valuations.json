@@ -3,7 +3,7 @@
   "source": "flytrippers-card-data-static-json",
   "currency": "CAD",
   "unit": "cents_per_point",
-  "updated_at": "2026-11-11 23:05:26",
+  "updated_at": "2026-11-13 12:19:40",
   "programs": [
     {
       "id": "aeroplan",
@@ -96,12 +96,12 @@
       "order": 5
     },
     {
-      "id": "air-miles",
+      "id": "blue-rewards",
       "category": "Banks/Others",
       "brand": "",
-      "name": "miles",
-      "display_name": "AIR MILES Miles",
-      "value_cents": 10.5,
+      "name": "points",
+      "display_name": "Blue Rewards points",
+      "value_cents": 0.67,
       "order": 6
     },
     {
@@ -114,12 +114,12 @@
       "order": 6
     },
     {
-      "id": "mbna-rewards",
+      "id": "air-miles",
       "category": "Banks/Others",
       "brand": "",
-      "name": "points",
-      "display_name": "MBNA Rewards points",
-      "value_cents": 1,
+      "name": "miles",
+      "display_name": "AIR MILES Miles",
+      "value_cents": 10.5,
       "order": 7
     },
     {
@@ -132,13 +132,31 @@
       "order": 7
     },
     {
+      "id": "hilton-honors",
+      "category": "Airlines/Hotels",
+      "brand": "",
+      "name": "points",
+      "display_name": "Hilton Honors points",
+      "value_cents": 0.6,
+      "order": 8
+    },
+    {
+      "id": "mbna-rewards",
+      "category": "Banks/Others",
+      "brand": "",
+      "name": "points",
+      "display_name": "MBNA Rewards points",
+      "value_cents": 1,
+      "order": 8
+    },
+    {
       "id": "cibc-aventura",
       "category": "Banks/Others",
       "brand": "",
       "name": "points",
       "display_name": "CIBC Aventura points",
       "value_cents": 1.25,
-      "order": 8
+      "order": 9
     },
     {
       "id": "qatar-avios",
@@ -147,24 +165,6 @@
       "name": "points",
       "display_name": "Qatar Airways Avios points",
       "value_cents": 1.5,
-      "order": 8
-    },
-    {
-      "id": "iberia-avios",
-      "category": "Airlines/Hotels",
-      "brand": "",
-      "name": "points",
-      "display_name": "Iberia Avios points",
-      "value_cents": 1.5,
-      "order": 9
-    },
-    {
-      "id": "nbc-a-la-carte",
-      "category": "Banks/Others",
-      "brand": "",
-      "name": "points",
-      "display_name": "NBC \u00e0 la carte points",
-      "value_cents": 1,
       "order": 9
     },
     {
@@ -173,7 +173,25 @@
       "brand": "",
       "name": "points",
       "display_name": "ALL - Accor Live Limitless points",
-      "value_cents": 2,
+      "value_cents": 3,
+      "order": 10
+    },
+    {
+      "id": "iberia-avios",
+      "category": "Airlines/Hotels",
+      "brand": "",
+      "name": "points",
+      "display_name": "Iberia Avios points",
+      "value_cents": 1.5,
+      "order": 10
+    },
+    {
+      "id": "nbc-a-la-carte",
+      "category": "Banks/Others",
+      "brand": "",
+      "name": "points",
+      "display_name": "NBC \u00e0 la carte points",
+      "value_cents": 1,
       "order": 10
     },
     {
@@ -183,7 +201,7 @@
       "name": "$",
       "display_name": "Cashback",
       "value_cents": 100,
-      "order": 10
+      "order": 11
     },
     {
       "id": "finnair-avios",
@@ -192,7 +210,7 @@
       "name": "points",
       "display_name": "Finnair Avios points",
       "value_cents": 1.5,
-      "order": 10
+      "order": 11
     },
     {
       "id": "aadvantage",
@@ -201,7 +219,7 @@
       "name": "miles",
       "display_name": "AAdvantage miles",
       "value_cents": 1.4,
-      "order": 11
+      "order": 12
     },
     {
       "id": "delta-skymiles",
@@ -210,7 +228,7 @@
       "name": "miles",
       "display_name": "Delta SkyMiles",
       "value_cents": 1.2,
-      "order": 12
+      "order": 13
     },
     {
       "id": "etihad-guest",
@@ -219,7 +237,7 @@
       "name": "miles",
       "display_name": "Etihad Guest miles",
       "value_cents": 1.4,
-      "order": 13
+      "order": 14
     },
     {
       "id": "amtrak-guest-rewards",
@@ -330,22 +348,13 @@
       "order": 100
     },
     {
-      "id": "hilton-honors",
-      "category": "Airlines/Hotels",
-      "brand": "",
-      "name": "points",
-      "display_name": "Hilton Honors points",
-      "value_cents": 0.6,
-      "order": 110
-    },
-    {
       "id": "ihg-one-rewards",
       "category": "Airlines/Hotels",
       "brand": "",
       "name": "points",
       "display_name": "IHG One Rewards points",
       "value_cents": 0.6,
-      "order": 120
+      "order": 110
     },
     {
       "id": "jetblue-trueblue",
@@ -354,7 +363,7 @@
       "name": "points",
       "display_name": "JetBlue TrueBlue points",
       "value_cents": 1.3,
-      "order": 130
+      "order": 120
     },
     {
       "id": "korean-air-skypass",
@@ -363,7 +372,7 @@
       "name": "miles",
       "display_name": "Korean Air SKYPASS miles",
       "value_cents": 1.7,
-      "order": 140
+      "order": 130
     },
     {
       "id": "lufthansa-miles-more",
@@ -372,7 +381,7 @@
       "name": "miles",
       "display_name": "Lufthansa Miles & More miles",
       "value_cents": 1.4,
-      "order": 150
+      "order": 140
     },
     {
       "id": "radisson-rewards",
@@ -381,7 +390,7 @@
       "name": "points",
       "display_name": "Radisson Rewards points",
       "value_cents": 0.4,
-      "order": 160
+      "order": 150
     },
     {
       "id": "singapore-airlines-krisflyer",
@@ -390,7 +399,7 @@
       "name": "miles",
       "display_name": "Singapore Airlines KrisFlyer miles",
       "value_cents": 1.4,
-      "order": 170
+      "order": 160
     },
     {
       "id": "southwest-rapid-rewards",
@@ -399,7 +408,7 @@
       "name": "points",
       "display_name": "Southwest Rapid Rewards points",
       "value_cents": 1.5,
-      "order": 180
+      "order": 170
     },
     {
       "id": "turkish-airlines-milessmiles",
@@ -408,7 +417,7 @@
       "name": "miles",
       "display_name": "Turkish Airlines Miles&Smiles miles",
       "value_cents": 1.3,
-      "order": 190
+      "order": 180
     },
     {
       "id": "united-mileageplus",
@@ -417,7 +426,7 @@
       "name": "miles",
       "display_name": "United MileagePlus miles",
       "value_cents": 1.4,
-      "order": 200
+      "order": 190
     },
     {
       "id": "via-preference",
@@ -426,7 +435,7 @@
       "name": "points",
       "display_name": "VIA Pr\u00e9f\u00e9rence points",
       "value_cents": 6,
-      "order": 210
+      "order": 200
     },
     {
       "id": "virgin-atlantic-flying-club-virgin",
@@ -435,7 +444,7 @@
       "name": "points",
       "display_name": "Virgin Atlantic Flying Club Virgin points",
       "value_cents": 1.5,
-      "order": 220
+      "order": 210
     },
     {
       "id": "world-of-hyatt",
@@ -444,7 +453,7 @@
       "name": "points",
       "display_name": "World of Hyatt points",
       "value_cents": 1.8,
-      "order": 230
+      "order": 220
     },
     {
       "id": "wyndham-rewards",
@@ -453,7 +462,7 @@
       "name": "points",
       "display_name": "Wyndham Rewards points",
       "value_cents": 1.2,
-      "order": 240
+      "order": 230
     }
   ]
 }
